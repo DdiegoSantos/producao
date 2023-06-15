@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: arial;
+    background-color: #333;
+    text-align:center;
+}
+div.container h1{
+    text-align: center;
+    font-size: clamp(12pt, 13pt, 15pt);
+    padding-bottom: 2px;
+}
+section div#corpo{
+    min-width: 300px;
+    width:70vw;
+    background-color:#fff;
+    margin: 0 auto;
+    padding: 2vw;
+    text-align:left;
+}
+div.container{
+    width:95%;
+    background-color:#fff;
+    padding: 1vw;
+    text-align:left;
+}
+div.container-box{
+    
+    text-align: left;
+}
+input.dados{
+    width:90px;
+    height:22px;
+    margin: 2px 0;
+}
+input.brix{
+    text-align: center;
+    width:50px;
+    height:22px;
+}
+
+p{
+    margin: 4px;
+    font-size:clamp(8pt, 10pt, 15pt);
+}
+h2{
+    font-size:clamp(8pt, 10pt, 15pt);
+    background-color: #a3a1a1;
+    padding: 1vw;
+    text-align: center;
+}
+h3{
+    font-size:clamp(8pt, 10pt, 15pt);
+    background-color: #e9e5e5;
+    padding: 1vw;
+    text-align: center;
+}
+.button{
+    height:28px;
+    width: 100%;
+}
+#resultado{
+    width: 100%;
+    text-align: center;
+    font-size: clamp(12pt, 1vw, 2vw);
+}
+span#balanca{
+    visibility: hidden;
+}
+
+#misturar{
+    visibility: hidden;
+}
+span#balanca input{
+    max-width: 60px;
+    min-width: 60px;
+    width: 15vw;
+}
+footer p{
+    border: none;
+    color:#fff;
+    margin:2vw 3vw 0 0;
+    text-align: right;
+    font-size: clamp(7pt, 10pt, 15pt);
+}
+article{
+
+    text-align: justify;
+}
+label{
+    
+    text-align: justify;
+}
+ #somaPcp{
+    margin: 2vw;
+    font-size:clamp(9pt, 1.5vw, 2.2vw);
+}
+.relatorio{
+    
+    font-size: 10pt;
+}
