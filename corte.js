@@ -116,7 +116,7 @@ function calcular(){
 
         fTor = (pcp - totPo) / Rtorr;
         tempEx = (((pcp-totPo)/Rtorr) + torr + res4)/vazao;  
-        tempoEx.innerHTML = `Falta à torrar ${fTor.toFixed(2)} (${(fTor/ 450).toFixed(2)} cargas); <br> Extração: ${tempEx.toFixed(2)} horas <br> Concentrador: ${fTor.toFixed(2)} horas`; 
+        tempoEx.innerHTML = `Falta à torrar ${fTor.toFixed(2)} (${(fTor/ 450).toFixed(2)} cargas); <br> Extração: ${tempEx.toFixed(2)} horas <br> Concentrador: ${((fTor+res4)/vazTaste).toFixed(2)} horas`; 
     }
      
          
