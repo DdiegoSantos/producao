@@ -1,4 +1,4 @@
-u<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -40,13 +40,12 @@ u<!DOCTYPE html>
                             <input type="number" id="dadosD" class="dados" placeholder="Diluido" value="">                        
                             <input type="number"id="brixD" class="brix" placeholder="D%" value="10">
                             <label for="" id="lblDil" class="dados">resultado</label><br>
-                            <input type="number"id="relaE" class="brix" placeholder="D%" value="6.75">
-                            <label for="relaE">Rel.Extração</label>
+                            
                         </p> <hr>
                             <h2>Concentrado</h2>
                         <p>
                             <input type="number" id="txtCon" placeholder="Concentrado" class="dados" value="">
-                            <input type="number" id="brixC" placeholder="C%" class="brix" value="50.5">
+                            <input type="number" id="brixC" placeholder="C%" class="brix" value="50">
                             <label for="" id="lblCon" class="dados">resultado</label>
                         </p> <hr>
 
@@ -91,14 +90,24 @@ u<!DOCTYPE html>
                         </p> <hr>
 
                 <p>
+                    <input type="number"id="relaE" class="brix" placeholder="D%" value="6.75">
+                            <label for="relaE">Rel.Extração</label> 
+                    <input type="number"id="vazaoExtra" class="brix" placeholder="L/h" value="2200">
+                            <label for="vazaoExtra">Vazão.Extração</label> <br>
+                    <input type="number"id="vazaoTorre" class="brix" placeholder="L/h" value="2700">
+                            <label for="vazaoTorre">Vazão.Torre</label> 
+                    <input type="number"id="brixEntradaTaste" class="brix" placeholder="%" value="11">
+                            <label for="brixEntradaTaste">Brix.Entrada.Taste</label> <br>
+                    <input type="number"id="brixTaste" class="brix" placeholder="%" value="54">
+                            <label for="brixTaste">Brix.Saida.Taste</label><br>
                     <input type="button" value="calcular" class="button" onclick="calcular()">
                 </p>
                 <p id="resultado">
-                    <label >0</label>
+                    <label >Resultado</label>
                 </p>
                 
             </div>
-            <p id="tempoEx" for="txtRe" class="relatorio"> Resumo de Tempos</p>
+            <p id="tempoEx" for="txtRe" class="relatorio" >Tempo de Extração</p>
         </div>
     </section>
 
