@@ -24,11 +24,14 @@ var
     labelDil = document.querySelector("#lblDil"),
     brixD = document.querySelector("#brixD"),
     relaExtra = document.querySelector("#relaE"),
+    vazaoExtra = document.querySelector("#vazaoExtra")
     dadosD = document.querySelector("#dadosD");
 
 // ****** Concentrado ******
 var brixC = document.querySelector("#brixC"),
     dadosC = document.querySelector("#txtCon"),
+    brixEnTaste = document.querySelector("#brixEntradaTaste")
+    brixTaste = document.querySelector("#brixTaste")
     labelCon = document.querySelector("#lblCon");
 
 var balanca = document.querySelector("#balanca");
@@ -46,7 +49,9 @@ var
     tq13N = document.querySelector("#tq13N");
 
 //******* Torres ********
-var emb1 = document.querySelector("#emb1"), 
+var 
+    vazaoTorre = document.querySelector("#vazaoTorre"),
+    emb1 = document.querySelector("#emb1"), 
     emb2 = document.querySelector("#emb2"),
     emb3 = document.querySelector("#emb3"),
     pesoEmb1 = document.querySelector("#pesoEmb1"),
@@ -60,6 +65,8 @@ var emb21 = document.querySelector("#emb2-1"),
     pesoEmb23 = document.querySelector("#pesoEmb2-3"),
     labelTor1 = document.querySelector("#lblTor1"),
     labelTor2 = document.querySelector("#lblTor2");
+
+
 
 var resultado = document.querySelector("#resultado");
 
@@ -97,7 +104,7 @@ function calcular(){
     prod2 = Number(pcp2.value)*Number(peso2.value);
     prod3 = Number(pcp3.value)*Number(peso3.value);
     
-    let vazaoExtracao = 2200, 
+    let vazaoExtracao = Number(vazaoExtra.value), 
         vazTaste = 13000, 
         saldoTorra = Number(tor.value),
         relacaoExtra = Number(relaExtra.value);
@@ -119,24 +126,31 @@ function calcular(){
 
     //**** checa outras Ligas ****
     if(fliga[0].checked){
-        a = 
+        saldoDiluido = (saldoTorra + faltaTor) * relacaoExtra + Number(dadosD.value);
+
+        saidaTaste = (Number(brixTaste.value)-Number(brixEnTaste.value)) / Number(brixTaste.value);
+        saldoConcentrado = Number(dadosC.value)+(saldoDiluido - (saldoDiluido * saidaTaste));
         tempoEx.innerHTML = `Falta à torrar ${faltaTor.toFixed(2)} (${(faltaTor / 450).toFixed(2)} cargas) (${((faltaTor / 450)/5).toFixed(2)} horas) <br> 
         Extração: ${((saldoTorra + faltaTor) / vazaoExtracao).toFixed(2)} horas <br> 
-        Concentrador: ${(((saldoTorra + faltaTor) * relacaoExtra + Number(dadosD.value)) / vazTaste ).toFixed(2)} horas`; 
-        resultado.innerHTML = `${totalPo.toFixed(2)}kg`;
+        Concentrador: ${(saldoDiluido / vazTaste ).toFixed(2)} horas <br>
+        Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)} horas `; 
+        resultado.innerHTML = `${totalPo.toFixed(2)}kg `;
     }else{        
-         
+        Number(brixTaste.value = 71);
+        saidaTaste = (Number(brixTaste.value)-Number(brixEnTaste.value)) / Number(brixTaste.value)
         saldoComBaMis = bmistura(Number(tq11N.value), Number(tq13N.value)); 
         a = pcp - (totalPo + saldoComBaMis);
         saldoDiluido = ((a / RendimentoTor) * relacaoExtra) + Number(dadosD.value);
-        
-        tempoEx.innerHTML = `Falta à torrar ${(a / RendimentoTor).toFixed(2)} (${(a / 450).toFixed(2)} cargas) <br> 
+        saldoConcentrado = Number(dadosC.value)+(saldoDiluido - (saldoDiluido * saidaTaste));
+        tempoEx.innerHTML = `Falta à torrar ${(a / RendimentoTor).toFixed(2)} (${(a / 450).toFixed(2)} cargas) (${((a / 450)/5).toFixed(2)} horas) <br> 
         Extração: ${((( a / RendimentoTor) + saldoTorra)/ vazaoExtracao).toFixed(2)} horas <br> 
-        Concentrador: ${( saldoDiluido/vazTaste ).toFixed(2)} horas`;   
+        Concentrador: ${( saldoDiluido/vazTaste ).toFixed(2)} horas <br>
+        Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)} `;   
 
         resultado.innerHTML = `${(totalPo + saldoComBaMis).toFixed(2)}kg`;
-  
+
     }
+   
 }
 
 function aparecer(){
