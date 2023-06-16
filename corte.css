@@ -20,7 +20,7 @@ h1, h2, h3{
 h1{
     background-color: #e9e5e5;
 }
-p#tempoEX, p{
+#tempoEx, p{
     margin: 8px;
     font-size:clamp(8pt, 10pt, 15pt);
 }
