@@ -1,11 +1,14 @@
 
 var msg = document.querySelector("#date");
+    var msg = document.querySelector("#date");    
     var agora = new Date();
     var hora = agora.getHours();
-    min = agora.getMinutes();
-    msg.innerHTML = `Data e hora atual ${hora}:${min} minutos.`
+    var dia = agora.getDate();
+    var mes = agora.getMonth();
+    min = agora.getMinutes();   
+    msg.innerHTML = `Data e hora atual: ${dia}/${mes+1} - ${hora}:${min} minutos.`
     if(min<10){
-        msg.innerHTML = `Data e hora atual ${hora}:0${min} minutos.`
+        msg.innerHTML = `Data e hora atual:${dia}/${mes+1} - ${hora}:0${min} minutos.`
     }
 //****** PCP ******
 var 
