@@ -1,7 +1,7 @@
 var msg = document.querySelector("#date");
 date = new Date();
 hora = date.getHours();
-min = date.getMinute();
+min = date.getMinutes();
 msg.innerHTML = `Data e hora atual ${hora}:${min}`;
 if(min < 10){
     msg.innerHTML = `Data e hora atual ${hora}:0${min}`;
