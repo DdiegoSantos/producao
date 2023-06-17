@@ -1,4 +1,12 @@
 
+var msg = document.querySelector("#date");
+    var agora = new Date();
+    var hora = agora.getHours();
+    min = agora.getMinutes();
+    msg.innerHTML = `Agora são ${hora}:${min} minutos.`
+    if(min<10){
+        msg.innerHTML = `Agora são ${hora}:0${min} minutos.`
+    }
 //****** PCP ******
 var 
     pcp1 = document.querySelector("#pcp1"),
