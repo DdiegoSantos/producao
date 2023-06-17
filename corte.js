@@ -131,6 +131,9 @@ function calcular(){
     labelCon.innerHTML = `${concentrado.toFixed(2)}kg`;
     labelTor1.innerHTML = `${torre1.toFixed(2)}kg`;
     labelTor2.innerHTML = `${torre2.toFixed(2)}kg`;
+    var produTorr1 = torre1 / (hora-6 + (min/60)),
+    produTorr2 = torre2 / (hora-6 + (min/60)),
+    produTotTorre = 24 * (produTorr1+produTorr2);
 
     //**** checa outras Ligas ****
     if(fliga[0].checked){
@@ -141,7 +144,10 @@ function calcular(){
         tempoEx.innerHTML = `Falta à torrar ${faltaTor.toFixed(2)} (${(faltaTor / 450).toFixed(2)} cargas) (${((faltaTor / 450)/5).toFixed(2)} horas) <br> 
         Extração: ${((saldoTorra + faltaTor) / vazaoExtracao).toFixed(2)} horas <br> 
         Concentrador: ${(saldoDiluido / vazTaste ).toFixed(2)} horas <br>
-        Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)} horas `; 
+        Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)} horas <br>
+        Produção hora Torre1 (${produTorr1.toFixed(2)})  <br> Produção hora Torre2 (${produTorr2.toFixed(2)})
+        <br> Produção total (${produTotTorre.toFixed(2)})`;
+        
         resultado.innerHTML = `${totalPo.toFixed(2)}kg `;
     }else{        
         Number(brixTaste.value = 71);
@@ -153,7 +159,9 @@ function calcular(){
         tempoEx.innerHTML = `Falta à torrar ${(a / RendimentoTor).toFixed(2)} (${(a / 450).toFixed(2)} cargas) (${((a / 450)/5).toFixed(2)} horas) <br> 
         Extração: ${((( a / RendimentoTor) + saldoTorra)/ vazaoExtracao).toFixed(2)} horas <br> 
         Concentrador: ${( saldoDiluido/vazTaste ).toFixed(2)} horas <br>
-        Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)} `;   
+        Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)}<br>
+        Produção hora Torre1 (${produTorr1.toFixed(2)})  <br> Produção hora Torre2 (${produTorr2.toFixed(2)})
+        <br> Produção total (${produTotTorre.toFixed(2)}) `;   
 
         resultado.innerHTML = `${(totalPo + saldoComBaMis).toFixed(2)}kg`;
 
