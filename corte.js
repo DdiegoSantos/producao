@@ -134,10 +134,18 @@ function calcular(){
     labelCon.innerHTML = `${concentrado.toFixed(2)}kg`;
     labelTor1.innerHTML = `${torre1.toFixed(2)}kg`;
     labelTor2.innerHTML = `${torre2.toFixed(2)}kg`;
-    var produTorr1 = torre1 / (hora-6 + (min/60)),
+    
+// ****Se hora for depois de meia noite, adicione mais 18 horas****
+    if(hora < 6){
+        produTorr1 = torre1 / (hora +18 + (min/60)),
+    produTorr2 = torre2 / (hora + 18 + (min/60)),
+    produTotTorre = 24 * (produTorr1+produTorr2);
+    }else{
+var produTorr1 = torre1 / (hora-6 + (min/60)),
     produTorr2 = torre2 / (hora-6 + (min/60)),
     produTotTorre = 24 * (produTorr1+produTorr2);
-
+    }
+    
     //**** checa outras Ligas ****
     if(fliga[0].checked){
         saldoDiluido = (saldoTorra + faltaTor) * relacaoExtra + Number(dadosD.value);
