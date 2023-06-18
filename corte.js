@@ -137,13 +137,15 @@ function calcular(){
     
 // ****Se hora for depois de meia noite, adicione mais 18 horas****
     if(hora < 6){
-        produTorr1 = torre1 / (hora +18 + (min/60)),
-    produTorr2 = torre2 / (hora + 18 + (min/60)),
-    produTotTorre = 24 * (produTorr1+produTorr2);
+    var produTorr1 = torre1 / (hora +18 + (min/60)),
+        produTorr2 = torre2 / (hora + 18 + (min/60)),
+        produTotTorre = 24 * (produTorr1+produTorr2),
+        produTotTorreM10 = produTotTorre - (produTotTorre * 0.05)
     }else{
-var produTorr1 = torre1 / (hora-6 + (min/60)),
-    produTorr2 = torre2 / (hora-6 + (min/60)),
-    produTotTorre = 24 * (produTorr1+produTorr2);
+    var produTorr1 = torre1 / (hora-6 + (min/60)),
+        produTorr2 = torre2 / (hora-6 + (min/60)),
+        produTotTorre = 24 * (produTorr1+produTorr2),
+        produTotTorreM10 = produTotTorre - (produTotTorre * 0.05);
     }
     
     //**** checa outras Ligas ****
@@ -157,7 +159,7 @@ var produTorr1 = torre1 / (hora-6 + (min/60)),
         Concentrador: ${(saldoDiluido / vazTaste ).toFixed(2)} horas <br>
         Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)} horas <br>
         Produção hora Torre1 (${produTorr1.toFixed(2)})  <br> Produção hora Torre2 (${produTorr2.toFixed(2)})
-        <br> Produção total (${produTotTorre.toFixed(2)})`;
+        <br> Produção total (${produTotTorre.toFixed(2)}) (-5% = ${produTotTorreM10.toFixed(2)})`;
         
         resultado.innerHTML = `${totalPo.toFixed(2)}kg `;
     }else{        
@@ -172,7 +174,7 @@ var produTorr1 = torre1 / (hora-6 + (min/60)),
         Concentrador: ${( saldoDiluido/vazTaste ).toFixed(2)} horas <br>
         Torre de Secagem: ${(saldoConcentrado / Number(vazaoTorre.value)).toFixed(2)}<br>
         Produção hora Torre1 (${produTorr1.toFixed(2)})  <br> Produção hora Torre2 (${produTorr2.toFixed(2)})
-        <br> Produção total (${produTotTorre.toFixed(2)}) `;   
+        <br> Produção total (${produTotTorre.toFixed(2)})  (-5% = ${produTotTorreM10.toFixed(2)})`;   
 
         resultado.innerHTML = `${(totalPo + saldoComBaMis).toFixed(2)}kg`;
 
