@@ -139,15 +139,15 @@ function calcular(){
     
 // ****Se hora for depois de meia noite, adicione mais 18 horas****
     if(hora < 6){
-    var produTorr1 = torre1 / (hora +18 + (min/60)),
-        produTorr2 = torre2 / (hora + 18 + (min/60)),
-        produTotTorre = (24 - Number(paradaTo1.value) - Number(paradaTo2.value)) * (produTorr1+produTorr2),
-        produTotTorreM10 = produTotTorre - (produTotTorre * 0.05)
+    var produTorr1 = torre1 / (hora + 18 - Number(paradaTo1.value) + (min/60)),
+    produTorr2 = torre2 / (hora + 18 - Number(paradaTo2.value) + (min/60)),
+    produTotTorre = (24 - (Number(paradaTo1.value) + Number(paradaTo2.value))/2) * (produTorr1+produTorr2),
+    produTotTorreM10 = produTotTorre - (produTotTorre * 0.05);
     }else{
-    var produTorr1 = torre1 / (hora-6 + (min/60)),
-        produTorr2 = torre2 / (hora-6 + (min/60)),
-        produTotTorre = (24 - Number(paradaTo1.value) - Number(paradaTo2.value)) * (produTorr1+produTorr2),
-        produTotTorreM10 = produTotTorre - (produTotTorre * 0.05);
+    var produTorr1 = torre1 / (hora - 6 - Number(paradaTo1.value) + (min/60)),
+    produTorr2 = torre2 / (hora - 6 - Number(paradaTo2.value) + (min/60)),
+    produTotTorre = (24 - (Number(paradaTo1.value) + Number(paradaTo2.value))/2) * (produTorr1+produTorr2),
+    produTotTorreM10 = produTotTorre - (produTotTorre * 0.05);
     }
     
     //**** checa outras Ligas ****
