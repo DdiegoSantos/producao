@@ -67,7 +67,9 @@ var
     emb3 = document.querySelector("#emb3"),
     pesoEmb1 = document.querySelector("#pesoEmb1"),
     pesoEmb2 = document.querySelector("#pesoEmb2"),
-    pesoEmb3 = document.querySelector("#pesoEmb3");
+    pesoEmb3 = document.querySelector("#pesoEmb3"),
+    paradaTo1 = document.querySelector("#temParada1");
+
 var emb21 = document.querySelector("#emb2-1"),
     emb22 = document.querySelector("#emb2-2"), 
     emb23 = document.querySelector("#emb2-3"), 
@@ -75,8 +77,8 @@ var emb21 = document.querySelector("#emb2-1"),
     pesoEmb22 = document.querySelector("#pesoEmb2-2"), 
     pesoEmb23 = document.querySelector("#pesoEmb2-3"),
     labelTor1 = document.querySelector("#lblTor1"),
-    labelTor2 = document.querySelector("#lblTor2");
-
+    labelTor2 = document.querySelector("#lblTor2"),
+    paradaTo2 = document.querySelector("#temParada2");
 
 
 var resultado = document.querySelector("#resultado");
@@ -139,12 +141,12 @@ function calcular(){
     if(hora < 6){
     var produTorr1 = torre1 / (hora +18 + (min/60)),
         produTorr2 = torre2 / (hora + 18 + (min/60)),
-        produTotTorre = 24 * (produTorr1+produTorr2),
+        produTotTorre = (24 - Number(paradaTo1.value) - Number(paradaTo2.value)) * (produTorr1+produTorr2),
         produTotTorreM10 = produTotTorre - (produTotTorre * 0.05)
     }else{
     var produTorr1 = torre1 / (hora-6 + (min/60)),
         produTorr2 = torre2 / (hora-6 + (min/60)),
-        produTotTorre = 24 * (produTorr1+produTorr2),
+        produTotTorre = (24 - Number(paradaTo1.value) - Number(paradaTo2.value)) * (produTorr1+produTorr2),
         produTotTorreM10 = produTotTorre - (produTotTorre * 0.05);
     }
     
