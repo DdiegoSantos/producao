@@ -1,127 +1,185 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="corte.css">
-    <title>Corte de Liga</title>
-   
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/letra2.png" type="image/x-icon">
+    <title>Teste Diego</title>
 </head>
-<body>
-    <section>
-        <div id="corpo">
-            <header>
-                <p id="date">  </p>
-                <div class="container">
-                    <h1> Corte de Liga </h1>
-                    <h2>PCP</h2>
-                    <p>
-                        Produto 1 <input type="number" id="pcp1" class="dados" placeholder="Qtd. Embalagem" value="">
-                        <input type="number" id="peso1" class="brix" placeholder="Peso" value=""><br>
-                        Produto 2 <input type="number" id="pcp2" class="dados" placeholder="Qtd. Embalagem" value="">
-                        <input type="number" id="peso2" class="brix" placeholder="Peso" value=""><br>
-                        Produto 3 <input type="number" id="pcp3" class="dados" placeholder="Qtd. Embalagem">
-                        <input type="number" id="peso3" class="brix" placeholder="Peso">
-                    </p>
-                    <label id="somaPcp"> Quantidade à produzir.</label>
-                    <hr>
-                </div>
-            </header>
-            <div class="container">
-                <p>
-                    <h2>Torrado</h2>
-                        <p>
-                            <input type="number"  id="txtTor" class="dados" placeholder="Torrado" value="">                            
-                            <input type="number" id="txtRe" class="brix" placeholder="R%" value="49">
-                            <label for="" id="lblTor" class="dados">resultado</label><br>
-                        
-                    </p> <hr>
-                        <h2>Diluido</h2>
-                        <p>
-                            <input type="number" id="dadosD" class="dados" placeholder="Diluido" value="">                        
-                            <input type="number"id="brixD" class="brix" placeholder="D%" value="10">
-                            <label for="" id="lblDil" class="dados">resultado</label><br>
-                            
-                        </p> <hr>
-                            <h2>Concentrado</h2>
-                        <p>
-                            <input type="number" id="txtCon" placeholder="Concentrado" class="dados" value="">
-                            <input type="number" id="brixC" placeholder="C%" class="brix" value="50">
-                            <label for="" id="lblCon" class="dados">resultado</label>
-                        </p> <hr>
+<body  >
+ <header>
+<div></div>
+<h1></h1>
 
-                        <input type="radio" class="rad" id="liga" name="liga" checked onclick="desaparecer()">
-                        <label for="liga">outra</label>
+</header>
 
-                        <input type="radio" class="rad" id="folger" name="liga" onclick="aparecer()">
-                        <label for="folger">folger</label>
+<section id="pcp" class="box_center">
+<table >
 
-                            <span id="balanca">
-                                <p>Balança de Mistura</p>
-                                    <input type="number" id="tq11N" placeholder="TQ 11N" class="dados" value=""> 
-                                    <input type="number" id="tq13N" placeholder="TQ 13N" class="dados" value=""> 
-                                    <input type="number" id="aroma" placeholder="aroma" class="dados" value="70">
-                                    <input type="number" id="split" placeholder="split" class="dados" value="155">
-                                    <input type="number" id="conB" placeholder="concentrado" class="dados" value="550">
-                                    <input type="number" id="repro" placeholder="reprocesso" class="dados" value="50">
-                                </span>
-                    <hr>
+	 <th colspan="3">Produtos pcp</th>
+	<tr>
+		<td colspan="3"><p>Insira os dados do PCP, primeiro quantidade de embalagens depois peso das embalagens</p></td>
+		
+	<!--class="pesoProd"-->
+	<tr>
+		<td>Nº Embalagem </td>
+		<td>Peso Embalagem </td>
+		<td >Total em Pó</td>
+	</tr>
+	<tr>
+		<td class="pesoProd"><input type="text" id="Qdt1_Pcp"></td>
+		<td class="pesoProd"><input type="text" id="peso_pcp1"></td>
+		<td><input type="text" id="result"></p></td>
+	</tr>
+	<tr>
+		
+		
+	</tr>
+	<tr>
+		<td class="pesoProd"><input type="text" id="Qdt2_Pcp"></td>
+		<td class="pesoProd"><input type="text" id="peso_pcp2"></td>
+		<td><input type="text" id="result2"></p></td>
+	</tr>
+	<tr>
+		
+	</tr>
+	<tr>
+		<td><input type="text" id="Qdt3_Pcp"></td>
+		<td class="pesoProd"><input type="text" id="peso_pcp3"></td>
+		<td ><input type="text" id="result3"></p></td>
+	</tr>
+	<tr>
+		
+		
+	</tr>
+	<tr>
+		<td><input type="text" id="Qdt4_Pcp"></td>
+		<td class="pesoProd"> <input type="text" id="peso_pcp4"></td>
+		<td ><input type="text" id="result4"></p></td>
+	</tr>
+	<tr>
+		
+	</tr>
+	<tr>
+		<td colspan="2">Total de pó para pruduzir</td>
+		
+		<td ><input type="text" class="total" id="totalPcp"></td>
+	</tr>
+	<tr>
+		<td></td>
+		 <td colspan="2" > <input type="button" value="calcular"  onclick="calcularPcp()"></td>
+		
+	</tr>
+ </table>
+<table style="width:60%"> <!-- -->
+	 <th colspan="3">Produtos em linha</th>
+	<tr>
+		<td colspan="3"><p>Insira os valores de cada produto em linha Ex.: Torrado,Concentrado, diluido</p></td>
+		
+	</tr>
+	<tr>
+		<td>Torrado <input type="text" id="valor_torrado" value="14000"></td>
+		<td>Rendimento torrado <input type="text" value="49.5" id="rendimento_torrado"></td>
+		<td>Total de pó<input type="text"id="result_torrado"></td>
+	</tr>
+	<tr>
+		<td>Diluido<input type="text" id="valor_diluido" value="75000"></td>
+		<td>Brix Diluido <input type="text" value="10" id="brix_diluido"></td>
+		<td>Total de pó<input type="text" id="result_diluido"></td>
+	</tr>
+	<tr>
+		<td>Concentrado<input type="text" id="valor_concentrado" value="40000"></td>
+		<td>Brix Concentrado <input type="text" value="50" id="brix_concentrado"></td>
+		<td>Total de pó<input type="text" id="result_concentrado"></td>
+	</tr>
+	<tr>
+		<th colspan="3"> <hr>torre 1</th>
+		
+		
+	</tr>
+	<tr>
+		<td>prod1<input type="text" id="prod1_tor1" value="100"></td>
+		<td>peso Emb<input type="text" id="peso_prod1_tor1" value="30" ></td>
+		<td>Total de pó<input type="text" id="res_prod1_tor1"></td>
+	</tr>
+	<tr>
+		<td>prod2<input type="text" id="prod2_tor1" value="100"></td>
+		<td>peso Emb<input type="text"  id="peso_prod2_tor1" value="10"></td>
+		<td>Total de pó<input type="text"  id="res_prod2_tor1"></td>
+	</tr>
+	<tr>
+		<th colspan="3"><hr>torre 2</th>
+		
+		
+	</tr>
+	<tr>
+		<td>prod1<input type="text" id="prod1_tor2" value="100"></td>
+		<td>peso Emb<input type="text"  id="peso_prod1_tor2" value="10"></td>
+		<td>Total de pó<input type="text"  id="res_prod1_tor2"></td>
+	</tr>
+	<tr>
+		<td>prod2<input type="text" id="prod2_tor2" value="100"></td>
+		<td>peso Emb<input type="text"  id="peso_prod2_tor2" value="10"></td>
+		<td>Total de pó<input type="text"  id="res_prod2_tor2"></td>
+	</tr>
+	
+	<tr >
+		<td  colspan="2"> Total de pó para pruduzir ----------------> </td>
+		
+		<td><input type="text" class="total" id="totalLinha"></td>
+	</tr>
+	<tr>
+		<td colspan="3" > <input type="button" value="calcular"  onclick="calcularCafe()"></td>
 
-                    </p>
-                        
-                        <h3>Torre 1</h3>
-                        <p>
-                            Produto 1 <input type="number" id="emb1" class="dados" placeholder="Qtd. Embalagem" value="">
-                            <input type="number" id="pesoEmb1" class="brix" placeholder="Peso" value=""><br>
-                            Produto 2 <input type="number" id="emb2" class="dados" placeholder="Qtd. Embalagem">
-                            <input type="number" id="pesoEmb2" class="brix" placeholder="Peso"><br>
-                            Produto 3 <input type="number" id="emb3" class="dados" placeholder="Qtd. Embalagem">
-                            <input type="number" id="pesoEmb3" class="brix" placeholder="Peso"><br>
-                            Tempo torre Parada <input type="number" name="" id="temParada1" class="brix"><br>
-                            <label for="" id="lblTor1" class="dados">resultado</label>
-                        </p>
-                        <h3>Torre 2</h3>
-                        <p>
-                            Produto 1 <input type="number" id="emb2-1" class="dados" placeholder="Qtd. Embalagem" value="">
-                            <input type="number" id="pesoEmb2-1" class="brix" placeholder="Peso" value=""><br>
-                            Produto 2 <input type="number" id="emb2-2" class="dados" placeholder="Qtd. Embalagem">
-                            <input type="number" id="pesoEmb2-2" class="brix" placeholder="Peso"><br>
-                            Produto 3 <input type="text" id="emb2-3" class="dados" placeholder="Qtd. Embalagem">
-                            <input type="number" id="pesoEmb2-3" class="brix" placeholder="Peso"><br>
-                            Tempo torre Parada <input type="number" name="" id="temParada2" class="brix"><br>
-                            <label for="" id="lblTor2" class="dados">resultado</label>
-                        </p> <hr>
+	</tr>
+</table>
+<!-- <table>
+	<tr>
+		<td>prod1<input type="text" ></td>
+		<td>peso <input type="text"  ></td>
+		<td><input type="text" ></td>
+		<td><input type="text" ></td>
+	</tr>
+	<tr>
+		<td>prod1<input type="text" ></td>
+		<td>peso<input type="text"  ></td>
+		<td><input type="text" ></td>
+		<td><input type="text" ></td>
+	</tr>
+	<tr>
+		<td>prod1<input type="text" ></td>
+		<td>peso<input type="text"  ></td>
+		<td><input type="text" ></td>
+		<td><input type="text" ></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="border:solid #333;text-align:center;"></td>
+		<td colspan="2"style="border:solid #333;text-align:center;"></td>
+		
+	</tr>
+</table>
+ <table>
+	<tr>
+		<td>Diluido<input type="text" id="valor_diluido"></td>
+		<td>Brix Diluido <input type="text" value="10" id="brix_diluido"></td>
+		<td><input type="text" id="result_diluido"></td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>Diluido<input type="text" id="valor_diluido"></td>
+		<td>Brix Diluido <input type="text" value="10" id="brix_diluido"></td>
+		<td><input type="text" id="result_diluido"></td>
+	</tr>
+</table> -->
+</section>  
+<section id="produtos" class="box_center">
 
-                <p>
-                    <input type="number"id="relaE" class="brix" placeholder="D%" value="6.75">
-                            <label for="relaE">Rel.Extração</label> 
-                    <input type="number"id="vazaoExtra" class="brix" placeholder="L/h" value="2200">
-                            <label for="vazaoExtra">Vazão.Extração</label> <br>
-                    <input type="number"id="vazaoTorre" class="brix" placeholder="L/h" value="2700">
-                            <label for="vazaoTorre">Vazão.Torre</label> 
-                    <input type="number"id="brixEntradaTaste" class="brix" placeholder="%" value="11">
-                            <label for="brixEntradaTaste">Brix.Entrada.Taste</label> <br>
-                    <input type="number"id="brixTaste" class="brix" placeholder="%" value="54">
-                            <label for="brixTaste">Brix.Saida.Taste</label><br>
-                    <input type="button" value="calcular" class="button" onclick="calcular()">
-                </p>
-                <p id="resultado">
-                    <label >Resultado</label>
-                </p>
-                
-            </div>
-            <p id="tempoEx" for="txtRe" class="relatorio" >Tempo de Extração</p>
-        </div>
-    </section>
-
+</section> 
 <footer>
-    <p>
-        by diego Nunes santos
-    </p>
+<p> todos os direitos reservados á Diego Nunes Santos</p>
 </footer>
 </body>
-<script src="corte.js"></script>
-    
-    
-</body>
+<script src="perfil.js"></script>
 </html>

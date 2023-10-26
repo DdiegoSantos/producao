@@ -1,0 +1,73 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+/*fec.style.background="#fff"
+	fec.style.width="30px"
+	fec.style.height="30px"*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+}
+
+.box_center{
+margin:auto;
+width:100%;
+
+min-width:450px;
+font-family: Arial, sans-serife;
+font-size:clamp(10px, 0.9vw, 1.8vw);
+background-color:#cecece;
+
+
+}
+table{
+margin:20px auto;
+border:1px solid #333;
+padding:5px;
+min-width:350px;
+max-width:400px;
+width:100%;
+height:265px;
+/*display:flex;
+flex-wrap:wrap;*/
+
+}
+
+th{
+text-transform:uppercase;
+}
+
+tr{
+
+}
+
+p{
+width:90%;
+margin:auto;
+text-align:center;
+}
+
+td input{
+min-width:40px;
+max-width:100px;
+width:100%;
+margin:auto;
+
+
+}
+.total{
+width:160px
+}
+
+td{
+width:33%;
+display:table-cell;
+padding: 5px 0 5px 0;
+text-align:center;
+
+/*border:1px solid #333;*/
+}
