@@ -87,7 +87,7 @@ function calcularCafe() {
 
 		document.querySelector("#totalLinha").value = Number(document.querySelector("#result_torrado").value) + Number(document.querySelector("#result_diluido").value) + Number(document.querySelector("#result_concentrado").value) + Number(document.querySelector("#res_prod1_tor1").value)+ Number(document.querySelector("#res_prod2_tor1").value)+ Number(document.querySelector("#res_prod1_tor2").value)+ Number(document.querySelector("#res_prod2_tor2").value);
 
-alert(`Falta ${document.querySelector("#totalPcp").value - document.querySelector("#totalLinha").value} de pó;`);
+alert(`Falta ${((document.querySelector("#totalPcp").value - document.querySelector("#totalLinha").value)/(Number(document.querySelector("#rendimento_torrado").value) / 100)/450} de pó;`);
 
 		
 		//res_prod2_tor1.value = ;
