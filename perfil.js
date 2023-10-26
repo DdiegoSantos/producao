@@ -87,7 +87,7 @@ function calcularCafe() {
 
 		document.querySelector("#totalLinha").value = Number(document.querySelector("#result_torrado").value) + Number(document.querySelector("#result_diluido").value) + Number(document.querySelector("#result_concentrado").value) + Number(document.querySelector("#res_prod1_tor1").value)+ Number(document.querySelector("#res_prod2_tor1").value)+ Number(document.querySelector("#res_prod1_tor2").value)+ Number(document.querySelector("#res_prod2_tor2").value);
 
-alert(`Falta ${(document.querySelector("#totalPcp").value - document.querySelector("#totalLinha").value)/(49.5/100)} cargas de café torrado`);
+alert(`Falta ${((document.querySelector("#totalPcp").value - document.querySelector("#totalLinha").value)/0.495).toFixed(2)} cargas de café torrado`);
 
 		
 		//res_prod2_tor1.value = ;
